@@ -1,16 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
+import React, {ButtonHTMLAttributes} from 'react';
 
-// import { Container } from './styles';
+import '../styles/button.scss';
 
-export const  Outlinebutton: React.FC = () => {
-    const [count, setCounter] = useState(0);
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
-    function increment(){
-        setCounter(count + 1);
-    }
+export const Button: React.FC<ButtonProps> = (props) => {
 
-    return(
-        <button onClick={increment}>{count}</button>
-    );
+	return (
+		<button className="button" {...props}/>
+	);
 }
+
+
